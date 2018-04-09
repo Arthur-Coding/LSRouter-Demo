@@ -1,0 +1,19 @@
+PODS:
+  - LSRootNavigationController (1.1.2)
+  - LSRouter (1.1.2)
+  - Tools/TimeCategory (1.0.0):
+    - LSRouter
+
+DEPENDENCIES:
+  - LSRootNavigationController
+  - LSRouter
+  - Tools/TimeCategory
+
+SPEC CHECKSUMS:
+  LSRootNavigationController: 2eb7f0cd6666b14c32a6e4f5fd2259786e38bdc0
+  LSRouter: e70fe5bb8e7e80ddcb1e267388eb392ce19aee62
+  Tools: 834243dcb1df4811980582c9f9dd32e2eabc9770
+
+PODFILE CHECKSUM: 6c6f2ea1265601dcacfb47855a764d8b6722b856
+
+COCOAPODS: 1.4.0
