@@ -10,8 +10,6 @@
 
 @interface SecondViewController ()
 
-@property (nonatomic, strong) UILabel *lab;
-
 @end
 
 @implementation SecondViewController
@@ -27,13 +25,13 @@
     self.title = @"SecondPage";
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 
-    self.lab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 40)];
-    self.lab.center = self.view.center;
-    self.lab.textColor = [UIColor redColor];
-    self.lab.textAlignment = NSTextAlignmentCenter;
-    self.lab.numberOfLines = 2;
-    self.lab.text = _message;
-    [self.view addSubview:self.lab];
+    UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 40)];
+    lab.center = self.view.center;
+    lab.textColor = [UIColor redColor];
+    lab.textAlignment = NSTextAlignmentCenter;
+    lab.numberOfLines = 2;
+    lab.text = _message;
+    [self.view addSubview:lab];
 
     // 发送通讯信息
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleDone target:self action:@selector(testNotification)];

@@ -26,6 +26,7 @@
 - (void)config
 {
     self.title = @"主页";
+    self.view.backgroundColor = [UIColor whiteColor];
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"视图测试" style:UIBarButtonItemStyleDone target:self action:@selector(testViewAction:)];
     UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"控制器测试1" style:UIBarButtonItemStyleDone target:self action:@selector(nextPageAction:)];
@@ -45,7 +46,8 @@
 - (void)nextPageAction:(UIBarButtonItem *)sender {
     WeakSelf
     [LSRouter action_SC_showText:^(id module) {
-        if ([module isKindOfClass:[UIViewController class]]) {
+        if ([module isKindOfClass:[UIViewController class]])
+        {
             [weakSelf.navigationController pushViewController:module animated:YES];
         }
     } param:@"successful!"];
@@ -53,7 +55,8 @@
 - (void)nextPageAction2:(UIBarButtonItem *)sender {
     WeakSelf
     [LSRouter action_SC_showAlert:^(id module) {
-        if ([module isKindOfClass:[UIViewController class]]) {
+        if ([module isKindOfClass:[UIViewController class]])
+        {
             [weakSelf.navigationController pushViewController:module animated:YES];
         }
     } param:@"successful again!"];
@@ -61,7 +64,8 @@
 - (void)testViewAction:(UIBarButtonItem *)sender {
     WeakSelf
     [LSRouter action_TV_showText:^(id module) {
-        if ([module isKindOfClass:[UIView class]]) {
+        if ([module isKindOfClass:[UIView class]])
+        {
             [weakSelf.navigationController.view addSubview:module];
         }
     } text:@"I am a view!"];

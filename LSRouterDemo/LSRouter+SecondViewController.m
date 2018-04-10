@@ -18,19 +18,11 @@ static NSString * const module_SC_action2 = @"alertWith:";
 
 + (void)action_SC_showText:(LSRouterHandler)handler param:(NSString *)param
 {
-    [self openModule:module_SC action:module_SC_action1 params:param perform:^(id module) {
-        if (handler) {
-            handler(module);
-        }
-    }];
+    [self openModule:module_SC action:module_SC_action1 params:param perform:handler];
 }
 + (void)action_SC_showAlert:(LSRouterHandler)handler param:(NSString *)param
 {
-    [self openModule:module_SC action:module_SC_action2 params:param perform:^(id module) {
-        if (handler) {
-            handler(module);
-        }
-    }];
+    [self openModule:module_SC action:module_SC_action2 params:param perform:handler];
 }
 
 + (void)action_SC_receive:(LSInformationHandler)resultHandler

@@ -15,11 +15,7 @@ static NSString * const module_TV_action = @"changeShowText:";
 
 + (void)action_TV_showText:(LSRouterHandler)handler text:(NSString *)text
 {
-    [self openModule:module_TV action:module_TV_action params:text perform:^(id module) {
-        if (handler) {
-            handler(module);
-        }
-    }];
+    [self openModule:module_TV action:module_TV_action params:text perform:handler];
 }
 
 @end
